@@ -1,0 +1,7 @@
+.content{
+    display: flex;
+    justify-content: flex-end;
+}
+.form{
+    padding-right: 0.5rem;
+}   

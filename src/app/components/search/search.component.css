@@ -1,0 +1,46 @@
+.setting {
+  display: flex;
+  justify-content: flex-end;
+}
+.setting mat-icon {
+  cursor: pointer;
+}
+
+form {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.style-input {
+  width: 50vw;
+}
+.body-search{
+  margin-bottom: 2rem;
+ 
+}
+.content {
+  margin: 0 auto;
+  width: 50vw;
+  display: grid;
+  grid: auto/ auto auto;
+  align-items: center;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+/* .container-setting{
+} */
+/* .dialog-content{
+  width: 350px
+} */
+mat-form-field-flex{
+  width: 300px;
+}
+.btn-action{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+}
+.btn-action button{
+  margin: 0 0.5rem;
+  padding: 0.2rem;
+}

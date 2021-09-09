@@ -1,0 +1,38 @@
+<div class="container-setting">
+  <h1 mat-dialog-title>Setting Search</h1>
+  <div mat-dialog-content class="dialog-content">
+  <div class="number">
+    <p>Number per page: {{valuePage}}</p>
+    <mat-form-field appearance="fill" class="api-input" [style.width.px]=300>
+      <mat-label>Number per page: </mat-label>
+      <input type="number" matInput [(ngModel)]="valuePage" class="input-style">
+    </mat-form-field>
+  </div>
+  <div class="debounce">
+    <p>Search debounce: {{timeToSearch}}</p>
+    <mat-form-field appearance="fill" class="api-input" [style.width.px]=300>
+      <mat-label>Search debounce: </mat-label>
+      <input matInput [(ngModel)]="timeToSearch" type="number" class="input-style">
+    </mat-form-field>
+  </div>
+  <div class="input-api">
+    
+  </div>
+  <div class="api">
+    <mat-form-field appearance="fill" class="api-input" [style.width.px]=300>
+      <mat-label>Insert YouTube API</mat-label>
+      <input matInput [(ngModel)]="apiKey" class="input-style">
+    </mat-form-field>
+    <div class="api-key">
+      API Key: 
+      <p>{{apiKey}}</p>
+      
+    </div>
+  </div>
+</div>
+<div mat-dialog-actions class="btn-action" >
+  <!-- <button mat-dialog-close>Close</button> -->
+  <button mat-button color="warn" (click)="close()">Close</button>
+  <button mat-button mat-raised-button color="primary" (click)="ok()">Ok</button>
+</div>
+</div>

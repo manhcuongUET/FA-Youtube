@@ -1,0 +1,21 @@
+<div class="body">
+  <!-- <select #select (change)="getDataOrder(select.value)">
+    <option selected="true" disabled="disabled"></option>
+    <option *ngFor="let data of selected" value="{{ data }}">{{ data }}</option>
+  </select> -->
+  <button
+    mat-icon-button
+    [matMenuTriggerFor]="menu"
+    aria-label="Example icon-button with a menu"
+  >
+    <mat-icon>reorder</mat-icon>
+  </button>
+  <span>Order</span>
+  <mat-menu #menu="matMenu">
+    <div>
+      <button mat-menu-item *ngFor="let items of selected">
+        <div (click)="getDataOrder(items)">{{ items | uppercase }}</div>
+      </button>
+    </div>
+  </mat-menu>
+</div>

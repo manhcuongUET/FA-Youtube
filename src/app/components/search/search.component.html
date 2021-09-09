@@ -1,0 +1,26 @@
+<ng-container class="container">
+  <div class="setting">
+    <button mat-button (click)="openDialog()">
+      <mat-icon class="mat-icon-rtl-mirror">settings</mat-icon>
+    </button>
+  </div>
+  <form class="example-form">
+    <mat-form-field class="example-full-width style-input" appearance="fill">
+      <!-- <mat-label>Favorite food</mat-label> -->
+      <input
+        matInput
+        placeholder="Type to search for videos"
+        name="search"
+        #input
+        (addvalueSearch)="(input.value)"
+      />
+    </mat-form-field>
+  </form>
+
+  <div class="body-search">
+    <div class="content">
+      <app-order (dataOrder)='getDataField($event)'></app-order>
+      <app-date-picker></app-date-picker>
+    </div>
+  </div>
+</ng-container>

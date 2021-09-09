@@ -1,0 +1,83 @@
+<app-search (valueSearch)="getData($event)"></app-search>
+<ng-container>
+  <div class="body">
+    <div
+      class="content"
+      *ngFor="let items of valueData | pagination: page_size:page_number"
+    >
+      <!-- <div class="style-item">
+        <div class="items1">
+          <img
+            [src]="items.thumbnail"
+            alt="{{ items.title }}"
+            class="img-style"
+          />
+        </div>
+        <div class="items2">
+          <p>
+            {{ items.title }}
+          </p>
+          <p>{{ items.publishedAt | date: "dd/MM/yyyy, h:mm a" }}</p>
+          <a [href]="items.videoUrl" target="_blank" class="extra">
+            <button class="button-style">
+              <span> Open Video</span>
+              <mat-icon>open_in_new</mat-icon>
+            </button>
+          </a>
+        </div>
+      </div> -->
+      <mat-card class="example-card">
+        <mat-card-title-group>
+          <mat-card-title
+            ><p>
+              {{ items.title }}
+            </p></mat-card-title
+          >
+          <mat-card-subtitle
+            ><p>{{ items.publishedAt | date: "dd/MM/yyyy, h:mm a" }}</p>
+            <a [href]="items.videoUrl" target="_blank" class="extra">
+              <button class="button-style">
+                <span> Open Video</span>
+                <mat-icon>open_in_new</mat-icon>
+              </button>
+            </a></mat-card-subtitle
+          >
+          <img
+            mat-card-sm-image
+            [src]="items.thumbnail"
+            alt="{{ items.title }}"
+            class="img-style"
+          />
+        </mat-card-title-group>
+      </mat-card>
+    </div>
+    <ng-template [ngIf]="pagination">
+      <mat-paginator
+        [length]="valueData.length"
+        [pageSize]="page_size"
+        [pageSizeOptions]="[5, 10, 50, 100]"
+        aria-label="Select page"
+        (page)="handlePage($event)"
+      >
+      </mat-paginator>
+    </ng-template>
+  </div>
+</ng-container>
+
+<!-- <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav> -->
